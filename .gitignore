@@ -1,0 +1,32 @@
+# ESP-IDF build output
+build/
+
+#ESP-IDF local config
+sdkconfig
+sdkconfig.old
+
+#Clangd compiler database
+compile_commands.json
+
+# ESP-IDF managed dependencies
+managed_components/
+
+# Python fils
+__pycache__/
+*.pyc
+.venv/
+
+# Captured CSI datasets
+host/data/raw/*
+host/data/processed/*
+host/data/labeled/*
+
+# Keep empty data directories in Git
+!host/data/raw/.gitkeep
+!host/data/processed/.gitkeep
+!host/data/labeled/.gitkeep
+
+# Editor Temp files
+*.swp
+*.swo
+*~

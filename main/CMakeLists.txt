@@ -2,6 +2,7 @@ idf_component_register(
 	SRCS
 		"app_main.c"
 		"csi_capture.c"
+		"esp_err.c"
 
 	INCLUDE_DIRS
 		"."
