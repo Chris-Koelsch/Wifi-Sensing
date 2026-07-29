@@ -2,6 +2,8 @@ idf_component_register(
 	SRCS
 		"app_main.c"
 		"csi_capture.c"
+		"wifi_station.c"
+		"packet_generator.c"
 
 	INCLUDE_DIRS
 		"."

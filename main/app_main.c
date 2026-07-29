@@ -1,4 +1,5 @@
 #include "csi_capture.h"
+#include "packet_generator.h"
 #include "wifi_station.h"
 
 #include "esp_err.h"
@@ -29,12 +30,17 @@ void app_main(void)
     ESP_ERROR_CHECK(
         wifi_station_start()
     );
-
     /*
      * Wi-Fi is now running, so CSI can be configured and enabled.
      */
     ESP_ERROR_CHECK(
         csi_capture_start()
+    );
+
+    const esp_ip4_addr_t gateway =
+        wifi_station_get_gateway();
+    ESP_ERROR_CHECK(
+        packet_generator_start(gateway)
     );
 
     ESP_LOGI(
