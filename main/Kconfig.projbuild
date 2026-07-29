@@ -22,7 +22,7 @@ menu "Wi-Fi sensing configuration"
         default 10
         help
             Maximum number of reconnection attempts before
-            wifi_station_start() reports failure.
+            wifi_sensing_station_start() reports failure.
 
     config CSI_PING_INTERVAL_MS
         int "Router ping interval in milliseconds"

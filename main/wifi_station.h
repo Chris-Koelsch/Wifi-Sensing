@@ -22,21 +22,21 @@
  *      - ESP_FAIL if the retry limit was reached.
  *      - Another ESP-IDF error code if initialization failed.
  */
-esp_err_t wifi_station_start(void);
+esp_err_t wifi_sensing_station_start(void);
 
 /**
  * @brief Return the IPv4 gateway address received through DHCP.
  *
  * This will normally be the local address of the Wi-Fi router.
- * Call this only after wifi_station_start() returns ESP_OK.
+ * Call this only after wifi_sensing_station_start() returns ESP_OK.
  *
  * @return Router gateway IPv4 address.
  */
-esp_ip4_addr_t wifi_station_get_gateway(void);
+esp_ip4_addr_t wifi_sensing_station_get_gateway(void);
 
 /**
  * @brief Report whether the Wi-Fi station currently has an IP address.
  *
  * @return true if connected and assigned an IP address; otherwise false.
  */
-bool wifi_station_is_connected(void);
+bool wifi_sensing_station_is_connected(void);

@@ -14,7 +14,7 @@
 #include "freertos/event_groups.h"
 
 /*
- * Event-group bits used to notify wifi_station_start().
+ * Event-group bits used to notify wifi_sensing_station_start().
  *
  * BIT0: connected and received an IP address
  * BIT1: exhausted the configured retry count
@@ -170,7 +170,7 @@ static void wifi_event_handler(
     }
 }
 
-esp_err_t wifi_station_start(void)
+esp_err_t wifi_sensing_station_start(void)
 {
     /*
      * Prevent accidental initialization more than once.
@@ -178,7 +178,7 @@ esp_err_t wifi_station_start(void)
     if (s_wifi_event_group != NULL) {
         ESP_LOGW(
             TAG,
-            "wifi_station_start called more than once"
+            "wifi_sensing_station_start called more than once"
         );
 
         return s_is_connected ? ESP_OK : ESP_ERR_INVALID_STATE;
@@ -453,12 +453,12 @@ esp_err_t wifi_station_start(void)
     return ESP_FAIL;
 }
 
-esp_ip4_addr_t wifi_station_get_gateway(void)
+esp_ip4_addr_t wifi_sensing_station_get_gateway(void)
 {
     return s_gateway_address;
 }
 
-bool wifi_station_is_connected(void)
+bool wifi_sensing_station_is_connected(void)
 {
     return s_is_connected;
 }

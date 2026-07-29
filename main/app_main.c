@@ -28,7 +28,7 @@ void app_main(void)
      * until the ESP32 connects to the router.
      */
     ESP_ERROR_CHECK(
-        wifi_station_start()
+        wifi_sensing_station_start()
     );
     /*
      * Wi-Fi is now running, so CSI can be configured and enabled.
@@ -38,7 +38,7 @@ void app_main(void)
     );
 
     const esp_ip4_addr_t gateway =
-        wifi_station_get_gateway();
+        wifi_sensing_station_get_gateway();
     ESP_ERROR_CHECK(
         packet_generator_start(gateway)
     );
