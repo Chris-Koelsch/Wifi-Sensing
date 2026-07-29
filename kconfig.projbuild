@@ -1,0 +1,53 @@
+menu "Wi-Fi sensing configuration"
+
+    config WIFI_SENSING_SSID
+        string "Wi-Fi network SSID"
+        default ""
+        help
+            Name of the 2.4 GHz Wi-Fi network to which the
+            ESP32-S3 station will connect.
+
+    config WIFI_SENSING_PASSWORD
+        string "Wi-Fi network password"
+        default ""
+        help
+            Password for the selected Wi-Fi network.
+
+            This value is written into sdkconfig. Do not commit
+            sdkconfig if it contains real credentials.
+
+    config WIFI_SENSING_MAX_RETRIES
+        int "Maximum Wi-Fi connection retries"
+        range 1 100
+        default 10
+        help
+            Maximum number of reconnection attempts before
+            wifi_station_start() reports failure.
+
+    config CSI_PING_INTERVAL_MS
+        int "Router ping interval in milliseconds"
+        range 50 10000
+        default 250
+        help
+            Delay between ICMP echo requests sent to the router.
+
+            The router replies will later provide a predictable
+            stream of received packets for CSI collection.
+
+    config CSI_QUEUE_LENGTH
+        int "CSI record queue length"
+        range 4 128
+        default 32
+        help
+            Maximum number of copied CSI records that can wait
+            in the FreeRTOS queue before being processed.
+
+    config CSI_MAX_DATA_LENGTH
+        int "Maximum CSI data length in bytes"
+        range 128 1024
+        default 384
+        help
+            Maximum number of CSI bytes copied from a received
+            packet into one queue record.
+
+endmenu
