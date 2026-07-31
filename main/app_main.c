@@ -1,7 +1,6 @@
 #include "csi_capture.h"
 #include "packet_generator.h"
 #include "wifi_station.h"
-#include "serial_stream.h"
 #include "network_stream.h"
 
 #include "esp_err.h"
