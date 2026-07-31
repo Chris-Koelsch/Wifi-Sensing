@@ -5,6 +5,7 @@ idf_component_register(
 		"wifi_station.c"
 		"packet_generator.c"
 		"serial_stream.c"
+		"network_stream.c"
 
 	INCLUDE_DIRS
 		"."

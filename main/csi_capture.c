@@ -12,7 +12,6 @@
 #include "esp_timer.h"
 #include "esp_wifi.h"
 
-#include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 
 static const char *TAG = "csi_capture";

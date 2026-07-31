@@ -2,6 +2,7 @@
 #include "packet_generator.h"
 #include "wifi_station.h"
 #include "serial_stream.h"
+#include "network_stream.h"
 
 #include "esp_err.h"
 #include "esp_log.h"
@@ -39,7 +40,7 @@ void app_main(void)
     );
 
     ESP_ERROR_CHECK(
-        serial_stream_start()
+        network_stream_start()
     );
 
     const esp_ip4_addr_t gateway =

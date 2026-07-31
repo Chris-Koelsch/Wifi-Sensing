@@ -49,5 +49,18 @@ menu "Wi-Fi sensing configuration"
         help
             Maximum number of CSI bytes copied from a received
             packet into one queue record.
+    config CSI_UDP_RECEIVER_IP
+    string "CSI receiver IPv4 address"
+    default "192.168.1.100"
+    help
+        Local IPv4 address of the Ubuntu computer that will
+        receive the CSI UDP datagrams.
+
+config CSI_UDP_RECEIVER_PORT
+    int "CSI receiver UDP port"
+    range 1024 65535
+    default 5005
+    help
+        UDP port used by the Ubuntu CSI receiver.
 
 endmenu
