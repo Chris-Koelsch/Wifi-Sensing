@@ -4,6 +4,7 @@ idf_component_register(
 		"csi_capture.c"
 		"wifi_station.c"
 		"packet_generator.c"
+		"serial_stream.c"
 
 	INCLUDE_DIRS
 		"."
@@ -13,4 +14,6 @@ idf_component_register(
 		esp_event
 		esp_netif
 		nvs_flash
+		esp_timr
+		lwip
 )
